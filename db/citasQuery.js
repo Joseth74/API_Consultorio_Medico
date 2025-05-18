@@ -3,7 +3,7 @@ import { config } from '../config.js';
 /**
  * Carga la lista de citas
  */
-const listarTodaslasCitasQueryQuery = async () => {
+const listarTodaslasCitasQuery = async () => {
     try {
         const result = await config.query('SELECT * FROM citas');
         return result.rows;
