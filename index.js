@@ -10,6 +10,7 @@ const app = express();
 // Importar las rutas
 import citasRouter from './routes/citasRoute.js';     // Rutas de citas
 import pacientesRouter from './routes/pacientesRoute.js'; // Rutas de pacientes
+import medicosRouter from './routes/medicosRoute.js';
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -22,6 +23,7 @@ app.get('/', (req, res) => {
 // Usar las rutas
 app.use('/api/appointments', citasRouter);   // Rutas de citas
 app.use('/api/patients', pacientesRouter);     // Rutas de pacientes
+app.use('/api/doctors', medicosRouter);
 
 const port = process.env.PORT || 3000;
 
