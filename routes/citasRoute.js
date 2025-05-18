@@ -1,20 +1,20 @@
 import { Router } from 'express';
 
 import {
-    listarTodaslasCitasQuery,
+    listarTodaslasCitasController, // Usamos el nombre exportado en citasController
     listarCitaPorId,
     crearCita,
     actualizarCita,
     eliminarCita
 } from '../controllers/citasController.js';
 
-const libroRouter = Router();
+const citasRouter = Router(); // Cambiamos el nombre a citasRouter para ser más descriptivos
 
-libroRouter.get('/api/appointments', listarTodaslasCitasQuery);
-libroRouter.get('/:id', listarCitaPorId);
+citasRouter.get('/', listarTodaslasCitasController); // La ruta base para listar todas las citas es '/'
+citasRouter.get('/:id', listarCitaPorId); // Para obtener una cita por ID
 
-libroRouter.post('/', crearCita);
-libroRouter.put('/:id', actualizarCita);
-libroRouter.delete('/:id', eliminarCita);
+citasRouter.post('/', crearCita); // Para crear una nueva cita
+citasRouter.put('/:id', actualizarCita); // Para actualizar una cita por ID
+citasRouter.delete('/:id', eliminarCita); // Para eliminar una cita por ID
 
-export default libroRouter;
+export default citasRouter; // Exportamos citasRouter
