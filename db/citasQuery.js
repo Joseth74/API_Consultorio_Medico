@@ -29,12 +29,12 @@ const listarCitaPorIdQuery = async (id) => {
 /**
  * Guardar un nuevo libro
  */
-const crearCitaQuery = async (libro) => {
-    const { nombre, copias, estante } = libro;
+const crearCitaQuery = async (cita) => {
+    const { nombre, copias, estante } = cita;
     try {
         const result = await config.query(
-            'INSERT INTO citas (nombre, copias, estante) VALUES ($1, $2, $3) RETURNING *',
-            [nombre, copias, estante]
+            'INSERT INTO citas (paciente_id, medico_id, fecha_hora, estado) VALUES ($1, $2, $3, $4) RETURNING *',
+            [paciente_id, medico_id, fecha_hora, estado]
         );
         return result;
     } catch (err) {
@@ -46,12 +46,12 @@ const crearCitaQuery = async (libro) => {
 /**
  * Actualizar un libro por su ID
  */
-const actualizarCitaQuery = async (id, libro) => {
-    const { nombre, copias, estante } = libro;
+const actualizarCitaQuery = async (id, cita) => {
+    const { nombre, copias, estante } = cita;
     try {
         const result = await config.query(
-            'UPDATE citas SET nombre = $1, copias = $2, estante = $3 WHERE id = $4 RETURNING *',
-            [nombre, copias, estante, id]
+            'UPDATE citas SET paciente_id = $1, medico_id = $2, fecha_hora = $3, estado = $4 WHERE id = $5 RETURNING *',
+            [paciente_id, medico_id, fecha_hora, estado, id]
         );
         return result;
     } catch (err) {

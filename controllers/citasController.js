@@ -31,8 +31,8 @@ import {
   const listarCitaPorId = async (req, res) => { 
     try {
       //  Ejecutar la consulta en la base de datos
-      const libro = await listarCitaPorIdQuery(req.params.id);
-      res.json(libro);
+      const cita = await listarCitaPorIdQuery(req.params.id);
+      res.json(cita);
     } catch (error) {
       res.status(500).send(error);
     }
