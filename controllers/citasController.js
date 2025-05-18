@@ -6,7 +6,15 @@ import {
     eliminarCitaQuery
   } from "../db/citasQuery.js";
   
-  
+  const listarTodaslasCitasController = async (req, res) => {
+  try {
+    const citas = await listarTodaslasCitasQuery();
+    res.json(citas);
+  } catch (error) {
+    res.status(500).send(error);
+  }
+};
+
   /**
    * Obtener el libro con el ID especificado en la query / url
    * @param {*} req 
@@ -73,7 +81,7 @@ import {
   };
   
   export {
-    listarTodaslasCitasQuery,
+    listarTodaslasCitasController,
     listarCitaPorId,
     crearCita,
     actualizarCita,
