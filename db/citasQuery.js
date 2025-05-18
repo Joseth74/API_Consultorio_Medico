@@ -3,7 +3,7 @@ import { config } from '../config.js';
 /**
  * Carga la lista de citas
  */
-const listarTodosCitasQuery = async () => {
+const listarTodaslasCitasQueryQuery = async () => {
     try {
         const result = await config.query('SELECT * FROM citas');
         return result.rows;
@@ -78,7 +78,7 @@ const eliminarCitaQuery = async (id) => {
 
 // Exportar todas las funciones definidas en este archivo
 export {
-    listarTodosCitasQuery,
+    listarTodaslasCitasQuery,
     listarCitaPorIdQuery,
     crearCitaQuery,
     actualizarCitaQuery,

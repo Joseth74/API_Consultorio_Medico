@@ -1,5 +1,5 @@
 import {
-    listarTodosCitasQuery,
+    listarTodaslasCitasQuery,
     listarCitaPorIdQuery,
     crearCitaQuery,
     actualizarCitaQuery,
@@ -9,13 +9,13 @@ import {
   /**
    * Obtener todos los citas de la base de datos
    */
-  const listarTodosCitas = async (req, res) => {
+  const listarTodaslasCitasQuery = async (req, res) => {
     // Un bloque try-catch  sirve para validar si la peticion se obtiene o se devuelve un error
     // Try -> intentar
     // Catch -> capturar el error
     try {
       //  Ejecutar la consulta en la base de datos
-      const citas = await listarTodosCitasQuery();
+      const citas = await listarTodaslasCitasQueryQuery();
       res.json(citas);
     } catch (error) {
       res.status(500).send(error);
@@ -88,7 +88,7 @@ import {
   };
   
   export {
-    listarTodosCitas,
+    listarTodaslasCitasQuery,
     listarCitaPorId,
     crearCita,
     actualizarCita,

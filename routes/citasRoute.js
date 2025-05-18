@@ -1,7 +1,7 @@
 import { Router } from 'express';
 
 import {
-    listarTodosCitas,
+    listarTodaslasCitasQuery,
     listarCitaPorId,
     crearCita,
     actualizarCita,
@@ -10,7 +10,7 @@ import {
 
 const libroRouter = Router();
 
-libroRouter.get('/', listarTodosCitas);
+libroRouter.get('/api/appointments', listarTodaslasCitasQuery);
 libroRouter.get('/:id', listarCitaPorId);
 
 libroRouter.post('/', crearCita);
