@@ -5,9 +5,7 @@ import dotenv from 'dotenv'
 // Load env variables
 dotenv.config()
 
-app.get('/', (req, res) => {
-  res.send('¡Bienvenido a mi API!');
-});
+
 
 const app = express()
 
@@ -20,6 +18,9 @@ app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 app.use(cors())
 
+app.get('/', (req, res) => {
+  res.send('¡Bienvenido a mi API!');
+});
 
 //Usar las rutas
 app.use('/citas', productosRouter); // LIBROS
