@@ -1,5 +1,5 @@
 {
-  "name": "api-biblioteca",
+  "name": "api-consultorio_medico",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
@@ -10,7 +10,7 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "description": "API REST para sistema de biblioteca con PostgreSQL",
+  "description": "API REST para sistema de consultorio con PostgreSQL",
   "dependencies": {
     "body-parser": "^1.20.3",
     "cors": "^2.8.5",

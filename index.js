@@ -5,6 +5,10 @@ import dotenv from 'dotenv'
 // Load env variables
 dotenv.config()
 
+app.get('/', (req, res) => {
+  res.send('¡Bienvenido a mi API!');
+});
+
 const app = express()
 
 // Importar las rutas de los citas
